@@ -1,0 +1,27 @@
+<letter>
+    <title>
+        <description th:utext="${description}"></description>
+        <theme th:attr="text=${theme}"/>
+        <alien_race th:attr="code=${code}"/>
+        <created th:utext="${timeCreated}"></created>
+        <id description="Идентификатор письма" th:attr="value=${id}"/>
+        <authors th:each="author: ${authors}">
+            <employee>
+                <name th:utext="${author.getName()}"></name>
+                <second_name th:utext="${author.getSecondName()}"></second_name>
+                <lastname th:utext="${author.getLastName()}"></lastname>
+                <position th:utext="${author.position.name}"></position>
+            </employee>
+        </authors>
+    </title>
+    <message>
+        <paragraph  th:each="paragraph: ${paragraphs}" th:utext="${paragraph.value}">
+
+        </paragraph>
+    </message>
+    <contacts>
+        <tel th:attr="number=${telephone}"/>
+        <address th:attr="description=${address}"/>
+    </contacts>
+    <sent_time th:utext="${sent_time}"></sent_time>
+</letter>

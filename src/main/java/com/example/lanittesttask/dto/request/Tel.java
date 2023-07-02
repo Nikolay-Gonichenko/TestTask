@@ -1,0 +1,26 @@
+package com.example.lanittesttask.dto.request;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+import java.io.Serializable;
+
+@XmlRootElement(name = "tel")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Tel implements Serializable {
+    @XmlElement(name = "value")
+    private String value;
+
+    public Tel() {
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+}
